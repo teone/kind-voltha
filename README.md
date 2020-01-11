@@ -76,7 +76,6 @@ Please check the `releases` folder to see the available ones.
 | `WITH_RADIUS`                   | no                           | Should `freeradius` service be deployed?                                            |
 | `WITH_TIMINGS`                  | no                           | Outputs duration of various steps of the install                                    |
 | `WITH_CHAOS`                    | no                           | Starts kube-monkey to introduce chaos                                               |
-| `CONFIG_SADIS`                  | no                           | Configure SADIS entries into ONOS, if WITH_ONOS set (see SADIS Configuration        |    
 | `INSTALL_ONOS_APPS`             | no                           | Replaces/installs ONOS OAR files in onos-files/onos-apps                            |
 | `INSTALL_KUBECTL`               | yes                          | Should a copy of `kubectl` be installed locally?                                    |
 | `INSTALL_HELM`                  | yes                          | Should a copy of `helm` be installed locallly?                                      |

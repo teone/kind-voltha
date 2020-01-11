@@ -76,7 +76,6 @@ WITH_ADAPTERS=${WITH_ADAPTERS:-yes}
 WITH_SIM_ADAPTERS=${WITH_SIM_ADAPTERS:-yes}
 WITH_OPEN_ADAPTERS=${WITH_OPEN_ADAPTERS:-yes}
 ONLY_ONE=${ONLY_ONE:-yes}
-CONFIG_SADIS=${CONFIG_SADIS:-no}
 INSTALL_ONOS_APPS=${INSTALL_ONOS_APPS:-no}
 JUST_K8S=${JUST_K8S:-no}
 DEPLOY_K8S=${DEPLOY_K8S:-yes}
@@ -138,7 +137,6 @@ ALL_YES_NO="\
     WITH_ADAPTERS \
     WITH_SIM_ADAPTERS \
     WITH_OPEN_ADAPTERS \
-    CONFIG_SADIS \
     JUST_K8S \
     DEPLOY_K8S \
     INSTALL_ONOS_APPS \
@@ -1090,7 +1088,7 @@ if [ $WITH_ONOS == "yes" ]; then
     push_onos_config "Enabling extraneous rules for ONOS" "configuration/org.onosproject.net.flow.impl.FlowRuleManager" "onos-files/olt-onos-enableExtraneousRules.json"
     if [ -f onos-files/onos-sadis.json ]; then
         push_onos_config "[optional] Push ONOS SADIS Configuration" "network/configuration/apps/org.opencord.sadis" "onos-files/onos-sadis.json"
-    elif [ "$CONFIG_SADIS" == "yes" ]; then
+    elif [ "$WITH_BBSIM" == "yes" ]; then
         SADIS_CFG=onos-files/onos-sadis-sample.json
         check_onos_app_active org.opencord.sadis
         push_onos_config "[optional] Push ONOS SADIS Configuration" "network/configuration/apps/org.opencord.sadis" "$SADIS_CFG"
