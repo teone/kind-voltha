@@ -118,7 +118,7 @@ onos_env:
   value: "drivers,openflow-base,hostprovider"
 
 kafka_logging:
-  brokers: ['voltha-kafka.voltha.svc:9092']
+  brokers: ['voltha-kafka.voltha.svc.cluster.local:9092']
 
 # Customization for BBSIM
 kafka_broker: 'voltha-kafka.voltha.svc.cluster.local:9092'
