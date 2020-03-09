@@ -104,6 +104,7 @@ voltha-etcd-cluster:
   clusterSize: 1
   autoCompactionRetention: 1
 
+# Customization for ONOS
 onos_env:
 - name: POD_IP
   valueFrom:
@@ -115,6 +116,9 @@ onos_env:
     fieldPath: metadata.namespace
 - name: ONOS_APPS
   value: "drivers,openflow-base,hostprovider"
+
+kafka_logging:
+  brokers: ['voltha-kafka.voltha.svc:9092']
 
 # Customization for BBSIM
 kafka_broker: 'voltha-kafka.voltha.svc.cluster.local:9092'
