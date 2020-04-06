@@ -240,6 +240,8 @@ ALL_OPTIONS="\
     ONOS_API_PORT \
     ONOS_SSH_PORT \
     CONFIG_SADIS \
+    SADIS_BANDWIDTH_PROFILES \
+    SADIS_SUBSCRIBERS \
     SADIS_CFG \
     VOLTHA_API_PORT \
     VOLTHA_SSH_PORT \
@@ -252,6 +254,7 @@ ALL_OPTIONS="\
     WITH_RADIUS \
     WITH_KAFKA \
     WITH_ETCD \
+    NUM_OF_BBSIM \
     "
 
 # Iterate over yes/no configuration options and validate
@@ -809,7 +812,7 @@ if [ "$1" == "down" ]; then
             if [ "$WITH_ONOS" == "yes" ]; then
               ONOS_PODS="onos-.*"
               wait_for_pods "default" 0 "not" -1 "Waiting for ONOS PODs to terminate" $ONOS_PODS
-            fi 
+            fi
             wait_for_pods "voltha" 0 "not" -1 "Waiting for VOLTHA PODs to terminate" $PODS
         fi
     fi
